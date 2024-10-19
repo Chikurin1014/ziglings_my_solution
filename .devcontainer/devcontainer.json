@@ -1,0 +1,7 @@
+{
+    "name": "ziglings",
+    "dockerFile": "Dockerfile",
+    "extensions": [
+        "ziglang.vscode-zig"
+    ]
+}
