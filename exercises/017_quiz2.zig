@@ -9,18 +9,17 @@
 // Let's go from 1 to 16. This has been started for you, but there
 // are some problems. :-(
 //
-const std = import standard library;
+const std = @import("std");
 
-function main() void {
-    var i: u8 = 1;
+pub fn main() void {
     const stop_at: u8 = 16;
 
     // What kind of loop is this? A 'for' or a 'while'?
-    ??? (i <= stop_at) : (i += 1) {
+    for (1..stop_at + 1) |i| {
         if (i % 3 == 0) std.debug.print("Fizz", .{});
         if (i % 5 == 0) std.debug.print("Buzz", .{});
         if (!(i % 3 == 0) and !(i % 5 == 0)) {
-            std.debug.print("{}", .{???});
+            std.debug.print("{}", .{i});
         }
         std.debug.print(", ", .{});
     }
