@@ -27,7 +27,9 @@ const Elephant = struct {
     // Your Elephant trunk methods go here!
     // ---------------------------------------------------
 
-    ???
+    pub fn getTrunk(self: *Elephant) ?*Elephant {
+        return self.trunk;
+    }
 
     // ---------------------------------------------------
 
@@ -82,10 +84,6 @@ fn visitElephants(first_elephant: *Elephant) void {
         e.print();
 
         // This gets the previous elephant or stops.
-        if (e.hasTrunk()) {
-            e = e.getTrunk();
-        } else {
-            break;
-        }
+        e = e.getTrunk() orelse break;
     }
 }
